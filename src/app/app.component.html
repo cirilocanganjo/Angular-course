@@ -1,0 +1,46 @@
+<div class="flex flex-col">
+  
+  <div class="h-16 flex justify-between items-center bg-[#162343] text-white px-2">
+    <div>
+      <button (click)="drawer.toggle()">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="menu"></mat-icon>
+      </button>
+    </div>
+    <div>
+      <a href="/">
+        <img src="../assets/logo.png" class="w-12" alt="">
+      </a>
+    </div>
+  </div>
+
+  <div class="flex h-full w-full">
+    <mat-drawer-container class="h-[calc(100vh-4rem)] w-full" autosize>
+      <mat-drawer #drawer class="h-full shadow-sm border border-y-0" mode="side" [opened]="true">
+        <div class="flex flex-col w-44 h-full text-gray-600 font-semibold">
+          <a href="/">
+            <div class="flex items-center p-4 gap-1 hover:bg-gray-100">
+              <mat-icon>home</mat-icon>
+              <span class="text-lg">Home</span>
+            </div>
+          </a>
+
+          <a href="/cursos">
+            <div class="flex items-center p-4 gap-1 hover:bg-gray-100">
+              <mat-icon>chrome_reader_mode</mat-icon>
+              <span class="text-lg">Cursos</span>
+            </div>
+          </a>
+
+          <a href="/alunos">
+            <div class="flex items-center p-4 gap-1 hover:bg-gray-100">
+              <mat-icon>person</mat-icon>
+              <span class="text-lg">Alunos</span>
+            </div>
+          </a>
+        </div>
+      </mat-drawer>
+      <router-outlet></router-outlet>
+
+    </mat-drawer-container>
+  </div>
+</div>
